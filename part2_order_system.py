@@ -253,3 +253,15 @@ for date, orders in sales_log.items():
         best_day = date
 
 print(f"\nBest Selling Day: {best_day} | ₹{best_revenue}")
+
+
+
+print("===== All Orders =====")
+
+all_orders = []
+for date, orders in sales_log.items():
+    for order in orders:
+        all_orders.append((date, order))  # building into one list
+
+for number, (date, order) in enumerate(all_orders, start=1):
+    print(f"{number}. {date} | Order ID: {order['order_id']} | Items: {order['items']} | ₹{order['total']}")
